@@ -139,3 +139,53 @@ CONTAINER ID        IMAGE                     COMMAND             CREATED       
 # 使用CONTAINER ID刪除container
 $ docker container kill 1e19f0cab27d 
 ```
+
+------
+## Getting Started
+### Clone Project
+ you can create a new project based on Mocha-Chai-tutorial by doing the following:
+
+```bash
+$ git clone https://github.com/andy6804tw/docker-node-demo.git
+$ cd docker-node-demo
+```
+
+### Installation
+When that's done, install the project dependencies.You can use npm or yarn(recommended) for dependency management。
+
+```bash
+$ npm install
+```
+
+### Running the Project
+
+After completing the [installation](#installation) step, you're ready to start the project!
+
+| script | Description |
+| ------| ------ |
+| start | Serves your app at localhost:8080 |
+
+
+## Docker
+You can using docker iamge access this project !
+
+### Pull Project
+Pull Docker image from Docker Hub.
+
+```bash
+docker pull andy6804tw/docker-node-demo
+```
+
+### Start Image
+Run docker image and export 3000 PORT.
+
+```bash
+docker run -p 3000:8080 -d  andy6804tw/docker-node-demo
+```
+
+### Test
+If docker container works, it should response data in `localhost:3000`.
+
+```bash
+curl -i localhost:3000
+```
