@@ -21,11 +21,10 @@ FROM node:latest
 ```
 
 #### 3. 建立工作目錄
-首先建立一個空的目錄路徑依個人喜好設定，之後再使用 `WORKDIR` 指定工作目錄。
+首先建立一個空的目錄路徑依個人喜好設定，之後再使用 `WORKDIR` 指定工作目錄，如該目錄不存在，WORKDIR會幫你建立目錄，所以有些人會寫 `RUN mkdir -p /usr/src/app` 其實是可以省略的。
 
 ```bash
 # Create app directory
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 ```
 
@@ -93,13 +92,13 @@ node                alpine              5d68146e371d        4 hours ago         
 ```
 
 ## 啟動 image
-最後就可以執行 image 囉！其中 `-d` 的功用就是能夠背景執行並吐出一串 `container ID`，並且將內部監聽的 8080 PORT 是放到我們本機端的 3000 PORT，意思是在 Docker 容器中是跑 8080 原本程式所設定的，然而我們外部本機端用 3000 PORT 來監聽內部容器內容。
+最後就可以執行 image 囉！其中 `-d` 的功用就是能夠背景執行並吐出一串 `container ID`，並且將內部監聽的 8080 PORT 是放到我們本機端的 3000 PORT，意思是在 Docker 容器中是跑 8080 原本程式所設定的，然而我們外部本機端用 3000 PORT 來監聽內部容器內容。
 
 ```bash
 docker run -p 3000:8080 -d  專案名稱  
 ```
 
-如果想看 log 可以拿剛取得的 container ID 來查看 log (記住有s)。
+如果想看 log 可以拿剛取得的 container ID 來查看 log (記住有s)。
 
 ```bash
 docker logs <container ID>
