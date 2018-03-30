@@ -73,10 +73,10 @@ CMD [ "yarn", "start" ]
 ```
 
 ## 最後build image
-設定檔完成後可以開始 build image，在專案目錄下跑 `docker build -t 專案名稱` . 就會根據 Dockerfile build 出你自己的 image。
+設定檔完成後可以開始 build image，在專案目錄下跑 `docker build -t 專案名稱 .` (注意後面有`.`)就會根據 Dockerfile build 出你自己的 image。
 
 ```bash
-docker build -t 專案名稱
+docker build -t 專案名稱 .
 ```
 
 你可以使用 `docker image` 來檢查電腦中所有的 images
