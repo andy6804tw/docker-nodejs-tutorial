@@ -1,0 +1,12 @@
+version: '3.6'
+
+services:
+  docker-nodejs-tutorial:
+    image: docker-nodejs-tutorial
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:8080
+    volumes:
+      - .:/usr/src/app

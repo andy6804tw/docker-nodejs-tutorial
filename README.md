@@ -4,6 +4,8 @@ Dockerizing a Node.js web app
 ## 教學
 - Part1 建立 Dockerfile
   - [Tutorial 教學](/tutorial/Part1.md)
+- Part2 Docker Compose 的使用
+  - [Tutorial 教學](/tutorial/Part2.md)
   
 ------
 ## Getting Started
@@ -38,14 +40,14 @@ You can using docker iamge access this project !
 Pull Docker image from Docker Hub.
 
 ```bash
-docker pull andy6804tw/docker-nodejs-tutorial
+$ docker pull andy6804tw/docker-nodejs-tutorial
 ```
 
 ### Run the image
 Running your image with -d runs the container in detached mode, leaving the container running in the background. The -p flag redirects a public port to a private port inside the container. Run the image you previously built.
 
 ```bash
-docker run -p 3000:8080 -d  andy6804tw/docker-nodejs-tutorial
+$ docker run -p 3000:8080 -d  andy6804tw/docker-nodejs-tutorial
 ```
 
 ### Test
