@@ -38,19 +38,19 @@ You can using docker iamge access this project !
 Pull Docker image from Docker Hub.
 
 ```bash
-docker pull andy6804tw/docker-nodejs-tutorial
+$ docker pull andy6804tw/docker-nodejs-tutorial
 ```
 
 ### Run the image
 Running your image with -d runs the container in detached mode, leaving the container running in the background. The -p flag redirects a public port to a private port inside the container. Run the image you previously built.
 
 ```bash
-docker run -p 3000:8080 -d  andy6804tw/docker-nodejs-tutorial
+$ docker run -p 3000:8080 -d  andy6804tw/docker-nodejs-tutorial
 ```
 
 ### Test
 Docker mapped the 8080 port inside of the container to the port 3000 on your machine.
 
 ```bash
-curl -i localhost:3000
+$ curl -i localhost:3000
 ```

@@ -1,11 +1,10 @@
 ## Part1 教學
-
 ### Dockerfile設定
 #### 1. 新增 Dockerfile
 要把環境跟程式碼包成一個 image，我們需要一個 `Dockerfile` 檔案來撰寫打包的流程。
 
 ```bash
-touch Dockerfile
+$ touch Dockerfile
 ```
 
 #### 2. 取得 Base image
@@ -81,13 +80,13 @@ CMD [ "yarn", "start" ]
 設定檔完成後可以開始 build image，在專案目錄下跑 `docker build -t 專案名稱 .` (注意後面有`.`)就會根據 Dockerfile build 出你自己的 image。
 
 ```bash
-docker build -t 專案名稱 .
+$ docker build -t 專案名稱 .
 ```
 
 你可以使用 `docker image` 來檢查電腦中所有的 images
 
 ```bash
-docker image
+$ docker image
 ```
 
 ```
@@ -100,19 +99,19 @@ node                alpine              5d68146e371d        4 hours ago         
 最後就可以執行 image 囉！其中 `-d` 的功用就是能夠背景執行並吐出一串 `container ID`，並且將內部監聽的 8080 PORT 是放到我們本機端的 3000 PORT，意思是在 Docker 容器中是跑 8080 原本程式所設定的，然而我們外部本機端用 3000 PORT 來監聽內部容器內容。
 
 ```bash
-docker run -p 3000:8080 -d  專案名稱  
+$ docker run -p 3000:8080 -d  專案名稱  
 ```
 
 如果想看 log 可以拿剛取得的 container ID 來查看 log (記住有s)。
 
 ```bash
-docker logs <container ID>
+$ docker logs <container ID>
 ```
 
 若忘記 container ID 的話可以使用下列指令查詢目前所有專案的 container ID，此指令是查詢執行中的 container。
 
 ```bash
-docker ps
+$ docker ps
 ```
 
 ## 相關常用指令
@@ -120,15 +119,15 @@ docker ps
 ### 刪除所有容器 Delete all containers
 
 ```bash
-docker rm $(docker ps -a -q) 
+$ docker rm $(docker ps -a -q) 
 # 或
-docker rm $(docker ps -aq)
+$ docker rm $(docker ps -aq)
 ```
 
 ### 刪除所有映像檔 Delete all images
 
 ```bash
-docker rmi $(docker images -q)
+$ docker rmi $(docker images -q)
 ```
 
 ### 刪除執行中的 container
