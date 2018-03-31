@@ -45,7 +45,14 @@ RUN yarn install && yarn cache clean
 COPY . /usr/src/app
 ```
 
-#### 6. 設定預設指令
+#### 6. 聲明運行時容器提供的服務端口
+寫這行指令的功用是要讓開發者能夠快速得知此專案在容器內所運行的端口，當執行 images 時並不會因為這個聲明應用就會開啟這個端口的服務。
+
+```bash
+EXPOSE 8080
+```
+
+#### 7. 設定預設指令
 當 image 被跑起來時要執行 Node.js 寫的 server，所以我們用 `CMD` 設定這個 image 被跑起來時的預設指令，他有三種寫法這邊再提供另一種寫法 `CMD node index.js`
 
 ```bash
@@ -176,15 +183,15 @@ Pull Docker image from Docker Hub.
 docker pull andy6804tw/docker-node-demo
 ```
 
-### Start Image
-Run docker image and export 3000 PORT.
+### Run the image
+Running your image with -d runs the container in detached mode, leaving the container running in the background. The -p flag redirects a public port to a private port inside the container. Run the image you previously built.
 
 ```bash
 docker run -p 3000:8080 -d  andy6804tw/docker-node-demo
 ```
 
 ### Test
-If docker container works, it should response data in `localhost:3000`.
+Docker mapped the 8080 port inside of the container to the port 3000 on your machine.
 
 ```bash
 curl -i localhost:3000
