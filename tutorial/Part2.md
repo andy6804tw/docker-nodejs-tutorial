@@ -52,7 +52,7 @@ process.env.NODE_ENV
 # CTRL+C 退出停止服務
 $ docker-compose up
 ```
-<img src="/images/part2/img02.png">
+<img src="/images/part2/img01.png">
 
 若想讓他背景執行可以這樣：
 
