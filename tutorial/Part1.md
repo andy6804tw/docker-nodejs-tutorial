@@ -73,7 +73,6 @@ RUN yarn install && yarn cache clean
 COPY . /usr/src/app
 
 CMD [ "yarn", "start" ]
-
 ```
 
 ## 最後build image

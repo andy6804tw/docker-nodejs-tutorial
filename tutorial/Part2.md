@@ -43,7 +43,7 @@ services:
 process.env.NODE_ENV
 ```
 
-<img src="/images/part1/img01.png">
+<img src="/images/part2/img01.png">
 
 #### 執行測試
 一切準備就緒後就可以開始執行 Docker Compose 囉！
@@ -52,6 +52,7 @@ process.env.NODE_ENV
 # CTRL+C 退出停止服務
 $ docker-compose up
 ```
+<img src="/images/part2/img02.png">
 
 若想讓他背景執行可以這樣：
 
@@ -61,6 +62,7 @@ $ docker-compose up -d
 # 結束服務
 $ docker-compose stop
 ```
+<img src="/images/part2/img03.png">
 
 可以使用下列指令查看環境變數：
 
@@ -72,6 +74,6 @@ $ docker-compose run web env
 上面指令 stop 只是關閉目前 container 的服務，輸入 `docker ps -a ` 會發現此 container 還存在而狀態為 Exited，如果要移除 container 可以這樣做：
 
 ```bash
-# 移除 container
+# 移除所有 container
 $ docker-compose down --volumes
 ```
