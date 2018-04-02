@@ -1,4 +1,6 @@
 'use strict';
+// require and configure dotenv, will load vars in .env in PROCESS.ENV
+require('dotenv').config();
 
 const express = require('express');
 
@@ -12,4 +14,4 @@ app.get('/', function (req, res) {
 });
 
 app.listen(PORT);
-console.log('Running on http://localhost:' + PORT);
+console.log('Running on http://localhost:' + PORT + ` (${process.env.NODE_ENV})`);
