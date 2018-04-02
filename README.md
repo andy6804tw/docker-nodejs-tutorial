@@ -4,6 +4,8 @@ Dockerizing a Node.js web app
 ## 教學
 - Part1 建立 Dockerfile
   - [Tutorial 教學](/tutorial/Part1.md)
+- Part2 Docker Compose 的使用
+  - [Tutorial 教學](/tutorial/Part2.md)
   
 ------
 ## Getting Started
